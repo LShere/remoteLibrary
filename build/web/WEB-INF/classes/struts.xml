@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="Struts2_CRUD_DEMO" extends="struts-default" namespace="/">
+        <action name="List" class="action.BookAction" method="list">
+            <result>List.jsp</result>
+        </action>
+        <action name="Edit" class="action.BookAction" method="load">
+            <result>Edit.jsp</result>
+        </action>
+        <action name="Store" class="action.BookAction" method="store">
+            <result name="success" type="redirect">List</result>
+            <result name="input">/error.jsp</result>
+        </action>
+        <action name="Remove" class="action.BookAction" method="remove">
+            <result type="redirect">List</result>
+        </action>
+        
+    </package>
+</struts>
